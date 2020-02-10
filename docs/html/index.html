@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome to vultr-automation’s documentation! &#8212; vultr-automation 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-create_vps">
+<span id="welcome-to-vultr-automation-s-documentation"></span><h1>Welcome to vultr-automation’s documentation!<a class="headerlink" href="#module-create_vps" title="Permalink to this headline">¶</a></h1>
+<dl class="exception">
+<dt id="create_vps.GenericMissingAttribute">
+<em class="property">exception </em><code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">GenericMissingAttribute</code><a class="headerlink" href="#create_vps.GenericMissingAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>We tried to find a VPS atttribute and nothing returned from Vultr was matched</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="create_vps.HOSTNAME">
+<code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">HOSTNAME</code><em class="property"> = 'bgp-coldnorthadmin'</em><a class="headerlink" href="#create_vps.HOSTNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>The hostname and label attached to the server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>CONSTANT</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="exception">
+<dt id="create_vps.MaxServerAlreadyRunning">
+<em class="property">exception </em><code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">MaxServerAlreadyRunning</code><a class="headerlink" href="#create_vps.MaxServerAlreadyRunning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when we already have one server running.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="create_vps.TARGET_DATACENTER">
+<code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">TARGET_DATACENTER</code><em class="property"> = 'Toronto'</em><a class="headerlink" href="#create_vps.TARGET_DATACENTER" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target datacenter that the VPS will be spawned in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>CONSTANT</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="data">
+<dt id="create_vps.TARGET_OS">
+<code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">TARGET_OS</code><em class="property"> = 'Debian 10 x64 (buster)'</em><a class="headerlink" href="#create_vps.TARGET_OS" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target OS that needs to be installed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>CONSTANT</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="data">
+<dt id="create_vps.TARGET_PLAN_PRICE">
+<code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">TARGET_PLAN_PRICE</code><em class="property"> = '5.00'</em><a class="headerlink" href="#create_vps.TARGET_PLAN_PRICE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target price that the VPS will be billed at.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>CONSTANT</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="data">
+<dt id="create_vps.TARGET_SSHKEY">
+<code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">TARGET_SSHKEY</code><em class="property"> = 'bgp-coldnorthadmin'</em><a class="headerlink" href="#create_vps.TARGET_SSHKEY" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the desired SSH key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>CONSTANT</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="create_vps.check_return_value">
+<code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">check_return_value</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">message</em><span class="sig-paren">)</span><a class="headerlink" href="#create_vps.check_return_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will raise a GenericMissingAttribute if the value is None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>{Dict} -- The value to check to None</strong> (<em>value</em>) – </p></li>
+<li><p><strong>{str} -- The message to output of the Exception is raised</strong> (<em>message</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#create_vps.GenericMissingAttribute" title="create_vps.GenericMissingAttribute"><strong>GenericMissingAttribute</strong></a> – The Generic Exception raised if the value is None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="create_vps.get_datacenter">
+<code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">get_datacenter</code><span class="sig-paren">(</span><em class="sig-param">regions_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#create_vps.get_datacenter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expects a dict that contains a tuple of STR, DICT and returns a dict that matches the TARGET_DATACENTER.
+DICT OF TUPLES –&gt; TUPLES OF STR, DICT –&gt; DICT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{DICT} -- Dictionary of VULTR datacenter regions</strong> (<em>regions_dict</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>target_datacenter – Dictionary of the plan matching the TARGET_DATACENTER constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="create_vps.get_limit_running_servers">
+<code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">get_limit_running_servers</code><span class="sig-paren">(</span><em class="sig-param">servers_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#create_vps.get_limit_running_servers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensure that we only have one server running at the same time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{DICT} -- Dict of currently running servers.</strong> (<em>servers_dict</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean – Return True if the condition is respected - False if we already have more than one running.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="create_vps.get_os">
+<code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">get_os</code><span class="sig-paren">(</span><em class="sig-param">os_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#create_vps.get_os" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expects a dict that contains a tuple of STR, DICT and returns a dict that matches the TARGET_OS.
+DICT OF TUPLES –&gt; TUPLES OF STR, DICT –&gt; DICT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{DICT} -- Dictionary of VULTR OS</strong> (<em>os_dict</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>target_os – Dictionary of the plan matching the TARGET_OS constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="create_vps.get_plan">
+<code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">get_plan</code><span class="sig-paren">(</span><em class="sig-param">plans_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#create_vps.get_plan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expects a dict that contains a tuple of STR, DICT and returns a dict that matches the TARGET_PLAN_PRICE.
+DICT OF TUPLES –&gt; TUPLES OF STR, DICT –&gt; DICT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{DICT} -- Dictionary of VULTR VPS plans</strong> (<em>plans_dict</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>target_plan – Dictionary of the plan matching the TARGET_PLAN_PRICE constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="create_vps.get_ssh_key">
+<code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">get_ssh_key</code><span class="sig-paren">(</span><em class="sig-param">ssh_keys_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#create_vps.get_ssh_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expects a dict that contains a tuple of STR, DICT and returns a dict that the matches the TARGET_SSHKEY</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{DICT} -- Dict if currently existing SSH keys.</strong> (<em>sshkeys_dict</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict – Dictionary of the sshkey matching the TARGET_SSHKEY constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="create_vps.poll_server">
+<code class="sig-prename descclassname">create_vps.</code><code class="sig-name descname">poll_server</code><span class="sig-paren">(</span><em class="sig-param">vultr_client</em><span class="sig-paren">)</span><a class="headerlink" href="#create_vps.poll_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Poll the server status API and return if the server is ready to be  used</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{vultr client object} -- Vultr client for API access</strong> (<em>vultr_client</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">vultr-automation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Laurent Dumont.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
